@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "tailwind",#tailwind
     "theme",
-    "pages", #menu app 
+    "pages", #pages app, static pages
+    "menu",#menu
+    "orders",#orders
+    "users",#users  
     "rest_framework",
 ]
 TAILWIND_APP_NAME ='theme'

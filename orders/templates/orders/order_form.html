@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Place Your Order{% endblock %}
+{% block content %}
+
+<h1 class="text-3xl font-bold mb-4">Place Your Order</h1>
+
+<form method="post" class="space-y-4">
+  {% csrf_token %}
+  {{ form.customer_name.label_tag }}<br>
+  {{ form.customer_name }}<br>
+  {{ form.customer_email.label_tag }}<br>
+  {{ form.customer_email }}<br>
+
+  <h2 class="text-xl font-semibold mt-6 mb-2">Select Items:</h2>
+  {% for field in form %}
+    {% if field.name.startswith 'product_' %}
+      <div>
+        {{ field.label }}: {{ field }}
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Submit Order</button>
+</form>
+
+{% endblock %}
