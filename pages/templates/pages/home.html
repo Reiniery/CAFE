@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<html lang="en">
+	<!--SECTION 1: Landing maybe promotion-->
+	<div class="container ">
+		<section class="h-dvh w-dvw bg-red w-full">
+			<h1>WELCOME PAGE</h1> 
+		</section>
+	</div>
+	<!--SECTION DRINK OF THE DAY-->
+	<div>
+		<section class="h-dvh w-dvw bg-red w-full">
+			<h1>DRINK OF THE WEEK</h1> 
+		</section>
+	
+	</div>
+</html>
+{% endblock %}

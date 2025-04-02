@@ -1,0 +1,46 @@
+{% load tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Café Delight{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="/" class="text-2xl font-bold text-red-600">Café Delight</a>
+          </div>
+          <!-- Nav Links -->
+          <div class="hidden sm:-my-px sm:ml-6 sm:flex space-x-4 items-center">
+            <a href="/" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="/menu/" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Menu</a>
+            <a href="/order/" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Order</a>
+            <a href="/about/" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="py-10 ">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Footer (optional) -->
+  <footer class="text-center text-sm text-gray-400 mt-10">
+    &copy; {{ now|date:"Y" }} Café Delight. All rights reserved.
+  </footer>
+
+</body>
+</html>
